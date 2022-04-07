@@ -8,6 +8,7 @@ import tuitsController from "./controllers/tuits-controller.js";
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.get('/', (req, res) => {res.send('Welcome to Full Stack Development!')})
 
 helloController(app);
 usersController(app);
