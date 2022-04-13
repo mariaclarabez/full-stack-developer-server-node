@@ -4,6 +4,11 @@ import helloController
     from "./controllers/hello-controller.js";
 import usersController   from "./controllers/users-controller.js";
 import tuitsController from "./controllers/tuits-controller.js";
+import mongoose from "mongoose";
+
+
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://0.0.0.0:27017/webdev';
+mongoose.connect(CONNECTION_STRING);
 
 const app = express();
 app.use(express.json());
