@@ -16,6 +16,7 @@ const createTuit = async (req, res) => {
 
 const findAllTuits = async (req, res) => {
     const tuits = await tuitsDao.findAllTuits()
+    console.log(tuits)
     res.json(tuits);
 }
 
@@ -31,7 +32,8 @@ const updateTuit = async (req, res) => {
 const deleteTuit = async (req, res) => {
     const tuitdIdToDelete = req.params.tid;
     const status = await tuitsDao.deleteTuit(tuitdIdToDelete);
-    res.sendStatus(status);
+    console.log(status);
+    res.send(status);
 }
 
 export default tuitsController;
